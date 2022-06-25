@@ -1,39 +1,26 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.views import generic
 from .models import Post
 
 # Create your views here.
-def post_list_view(request):
-
+def PostListView(request):
     model = Post
 
-    return render(request, 'blog/post_list_view.html', {})
-
-def post_create_view(request):
-
+def PostCreateView(request):
     model = Post
     fields = '__all__'
     success_url  = reverse_lazy('blog:all')
 
-    return render(request, 'blog/post_form_view.html', {'form': form})
-
-def post_detail_view(request):
-
+def PostDetailView(request):
     model = Post
-    return render(request, 'blog/post_detail_view.html', {})
 
-def post_update_view(request):
-
+def PostUpdateView(request):
     model = Post
     fields = '__all__'
     success_url  = reverse_lazy('blog:all')
 
-    return render(request, 'blog/post_form_view.html', {})
-
-def post_delete_view(request):
-
+def PostDeleteView(request):
     model = Post
     fields = '__all__'
     success_url  = reverse_lazy('blog:all')
-
-    return render(request, 'blog/post_delete_view.html', {})
