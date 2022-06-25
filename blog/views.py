@@ -15,12 +15,12 @@ def post_create_view(request):
     fields = '__all__'
     success_url  = reverse_lazy('blog:all')
 
-    return render(request, 'post_form_view.html', {})
+    return render(request, 'blog/post_form_view.html', {'form': form})
 
 def post_detail_view(request):
 
     model = Post
-    return render(request, 'post_detail_view.html', {})
+    return render(request, 'blog/post_detail_view.html', {})
 
 def post_update_view(request):
 
@@ -28,7 +28,7 @@ def post_update_view(request):
     fields = '__all__'
     success_url  = reverse_lazy('blog:all')
 
-    return render(request, 'post_form_view.html', {})
+    return render(request, 'blog/post_form_view.html', {})
 
 def post_delete_view(request):
 
@@ -36,4 +36,4 @@ def post_delete_view(request):
     fields = '__all__'
     success_url  = reverse_lazy('blog:all')
 
-    return render(request, 'post_delete_view.html', {})
+    return render(request, 'blog/post_delete_view.html', {})
