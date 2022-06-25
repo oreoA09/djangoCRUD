@@ -130,6 +130,7 @@ dmypy.json
 
 # Database
 db.sqlite3
+db.sqlite
 
 # Static folder at project root
 /static/
