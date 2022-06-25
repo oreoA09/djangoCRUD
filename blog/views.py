@@ -4,23 +4,23 @@ from django.views import generic
 from .models import Post
 
 # Create your views here.
-def PostListView(request):
+class PostListView(generic.ListView):
     model = Post
 
-def PostCreateView(request):
-    model = Post
-    fields = '__all__'
-    success_url  = reverse_lazy('blog:all')
-
-def PostDetailView(request):
-    model = Post
-
-def PostUpdateView(request):
+class PostCreateView(generic.CreateView):
     model = Post
     fields = '__all__'
     success_url  = reverse_lazy('blog:all')
 
-def PostDeleteView(request):
+class PostDetailView(generic.DetailView):
+    model = Post
+
+class PostUpdateView(generic.UpdateView):
+    model = Post
+    fields = '__all__'
+    success_url  = reverse_lazy('blog:all')
+
+class PostDeleteView(request):
     model = Post
     fields = '__all__'
     success_url  = reverse_lazy('blog:all')
